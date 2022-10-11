@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './index.scss';
 
 export default function Soveteria() {
     const [gramas, setGrmas] = useState(0);
@@ -27,16 +27,19 @@ export default function Soveteria() {
 }
 
     return(
-        <section className="contador">
+        <main className="page-gramas">
+           <section className="conteiner-1">
+           <h1> Sorvete</h1>
 
-            <h1> Sorvete</h1>
-
-            <div> Gramas <input type="number" value={gramas} onChange={e => setGrmas(Number(e.target.value))}></input> </div>
-            <button onClick={calcularGramas}> Calcular </button>
-            <div>  {resul} </div>
+          <div> Coloque a quantidade de Gramas: <input className="input" type="number" value={gramas} onChange={e => setGrmas(Number(e.target.value))}></input> </div>
+          <button className="botao" onClick={calcularGramas}> Calcular </button>
+          <div> Seu sorverte deu R$ {resul} </div>
+          <img className="gaso" src="/sorvete.jpg" alt="aoba"/>
+           </section>
+           
 
            
-        </section>
+        </main>
     )
 }
 

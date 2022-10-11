@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './index.scss'
 
 export default function MesDia(){
     const [mes, setMes] = useState('');
@@ -19,19 +20,17 @@ export default function MesDia(){
 
    
     return(
-       <main >
+       <main  className="page-signo">
+        <section className="conteiner-1">
         <h1>Signos</h1>
-        <div> mes <input type="text" value={mes} onChange={e => setMes(e.target.value)}></input> </div>
-        <div> dia <input type="number" value={dia} onChange={e => setDia(Number(e.target.value))}></input> </div>
-        <button onClick={logica}>Vereficar</button>
+        <div> Informe o Mes:  <input className="input" type="text" value={mes} onChange={e => setMes(e.target.value)}></input> </div>
+        <div> Informe o Dia:  <input className="input" type="number" value={dia} onChange={e => setDia(Number(e.target.value))}></input> </div>
+        <button className="botao" onClick={logica}>Vereficar</button>
         <div>  {resultado} </div>
+        <img className="gaso" src="/signo.jpg" alt="opa"></img>
 
-
-      
+        </section> 
         
-    
-
-     
     
 
        </main>)

@@ -1,0 +1,65 @@
+.page-gramas{
+    width: 100%;
+    height: 100vh;
+    background-color: #B2E7E8;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+  
+
+    .nome-1{
+        color: red;
+    }
+    .nome-2{
+        color: green
+    }
+
+    .input{
+    padding: 0.3em;
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+    }
+
+    .conteiner-1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 1.5em;
+        border-radius: 12px;
+        border:solid 4px black;
+    }
+
+    .botao{
+        padding: 0.5em;
+        border: solid black;
+        border-radius: 12px;
+        margin: 1.5em;
+        background-color: white;
+        cursor: pointer;
+    }
+    .botao:hover{
+        border:  solid black;
+        background-color: red;
+        color: white;
+    }
+
+    .resposta{
+        font-size: 20px;
+    }
+    .gaso{
+        width: 280px;
+        height: 200px;
+        border-radius: 12px;
+        margin-top: 2em;
+       
+    }
+}
+
+*{
+   // border: solid 1px black;
+}
+

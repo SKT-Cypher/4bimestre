@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './index.scss'
 
 export default function Calculadora() {
     const [n1, setN1] = useState(0);
@@ -19,17 +19,21 @@ export default function Calculadora() {
 }
 
     return(
-        <section className="contador">
-
-            <h1> Acai</h1>
-
-            <div> Acai peq: <input type="number" value={n1} onChange={e => setN1(Number(e.target.value))}></input> </div>
-            <div> Acai med: <input type="number" value={n2} onChange={e => setN2(Number(e.target.value))}></input> </div>
-            <div> Acai grand: <input type="number" value={n3} onChange={e => setN3(Number(e.target.value))}></input> </div>
-            <div> desc: <input type="number" value={desc} onChange={e => setDesc(Number(e.target.value))}></input> </div>
+        <section className="page-acai">
+            
+            <section className="conteiner-1">
+            <h1> Açai</h1>
+            
+            <div> Açai peq: <input className="input" type="number" value={n1} onChange={e => setN1(Number(e.target.value))}></input> </div>
+            <div> Açai med: <input className="input" type="number" value={n2} onChange={e => setN2(Number(e.target.value))}></input> </div>
+            <div> Açai grd: <input  className="input" type="number" value={n3} onChange={e => setN3(Number(e.target.value))}></input> </div>
+            <div> Açai dcs: <input  className="input" type="number" value={desc} onChange={e => setDesc(Number(e.target.value))}></input> </div>
             <div>  {resul} </div>
 
-            <button onClick={açais}> Calcular </button>
+            <button className="botao" onClick={açais}> Calcular </button>
+            <img className="gaso" src="/cai2.jpg" alt="opa"/>
+            </section>
+            
         </section>
     )
 }

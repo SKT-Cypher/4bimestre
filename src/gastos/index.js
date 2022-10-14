@@ -16,6 +16,7 @@ export default function Gastos(){
     let c = (ganhos/100) * 21;
     let d = (ganhos/100) * 0;
 
+    let h = (ganhos/100) * 100
     let e = (ganhos/100) * 80;
     let f = (ganhos/100) * 50;
     let g = (ganhos/100) * 20;
@@ -26,7 +27,7 @@ export default function Gastos(){
   {
     return setResultado("Orçamento comprometido! Hora de rever seus gastos!")
   }
-  else if (gastos > a && gastos < ganhos){
+  else if (gastos > a && gastos < h){
     return setResultado ("Cuidado, seu orçamento pode ficar comprometido!")
   }
 

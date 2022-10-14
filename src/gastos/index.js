@@ -2,29 +2,47 @@ import { useState } from "react";
 import './index.scss';
 
 export default function Gastos(){
-    const [temperatura, setTemperatura] = useState('');
+    const [ganhos, setGanho] = useState('');
+    const [gastos, setGastos] = useState('');
     const [resultado, setResultado] = useState('')
+    
 
-  function calculoTemperatura(){
-   if(temperatura >= 41 )
+    
+
+  function calculodeGastos(){
+
+    let a = (ganhos/100) * 81;
+    let b = (ganhos/100) * 51;
+    let c = (ganhos/100) * 21;
+    let d = (ganhos/100) * 0;
+
+    let e = (ganhos/100) * 80;
+    let f = (ganhos/100) * 50;
+    let g = (ganhos/100) * 20;
+  
+
+
+   if(gastos > ganhos )
   {
-    return setResultado("Hipertemia")
+    return setResultado("Orçamento comprometido! Hora de rever seus gastos!")
   }
-  else if (temperatura >= 39.6 && temperatura < 41){
-    return setResultado ("Febre alta")
-  }
-
-  else if (temperatura >= 37.6 && temperatura < 39.6){
-    return setResultado ("Febre")
+  else if (gastos > a && gastos < ganhos){
+    return setResultado ("Cuidado, seu orçamento pode ficar comprometido!")
   }
 
-  else if (temperatura >= 36 && temperatura < 37.6){
-    return setResultado ("Normal")
+  else if (gastos > b  && gastos < e){
+    return setResultado ("Atenção, melhor conter os gastos!")
   }
 
-  else {
-    return setResultado ("Hipotemia")
+  else if (gastos > c  && gastos < f){
+    return setResultado ("Muito bem, seus gastos não ultrapassaram metade dos ganhos")
   }
+
+  else if (gastos > d  && gastos < g){
+    return setResultado ("Parabens")
+  }
+
+  
 
  
 
@@ -37,11 +55,11 @@ export default function Gastos(){
 
       <section className="conteiner-1">
       <h1>Gastos</h1>
-        <div> informe seus ganhos:  <input className="input" type="number" value={temperatura} onChange={e => setTemperatura(Number(e.target.value))}></input> </div>
-        <div> informe seus gastos:  <input className="input" type="number" value={temperatura} onChange={e => setTemperatura(Number(e.target.value))}></input> </div>
-        <button className="botao" onClick={calculoTemperatura}>Vereficar</button>
+        <div> informe seus ganhos:  <input className="input" type="number" value={ganhos} onChange={e => setGanho(Number(e.target.value))}></input> </div>
+        <div> informe seus gastos:  <input className="input" type="number" value={gastos} onChange={e => setGastos(Number(e.target.value))}></input> </div>
+        <button className="botao" onClick={calculodeGastos}>Vereficar</button>
         <div>  {resultado} </div>
-        <img className="gaso" src="/aboa.jpg" alt="opa"></img>
+        <img className="gaso" src='gastos.jpg' alt="k"></img>
       </section>
        
 

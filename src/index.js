@@ -9,11 +9,13 @@ import Soveteria from './gramas';
 import Temperatura from './temperatura';
 import Gastos from './gastos';
 import Cinema from './cinema';
+import Contar from './contarAte';
+import Retangulo from './retangulo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    < Cinema/>
+    < Retangulo/>
   </React.StrictMode>
 );
 

@@ -57,7 +57,15 @@
        
     }
 
-    
+    .resul{
+        display: flex;
+        flex-direction: column;
+        color: red;
+        font-size: 30px;
+        max-width: 30px;
+        align-items: center;
+        line-height: 50%;
+    }
 }
 
 *{

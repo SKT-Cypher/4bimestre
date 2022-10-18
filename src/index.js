@@ -11,6 +11,7 @@ import Gastos from './gastos';
 import Cinema from './cinema';
 import Contar from './contarAte';
 import Retangulo from './retangulo';
+import Linhas from './linha';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

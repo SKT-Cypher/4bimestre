@@ -16,13 +16,6 @@ export default function Contar(){
    arr.push(cont)
      setResultado (arr +  '');
 
-     
-
-
-    
-  
-
-
    
   }
 

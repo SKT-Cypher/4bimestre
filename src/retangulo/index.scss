@@ -33,7 +33,7 @@
         border:solid 4px black;
     }
 
-    .botao{
+    .botao1{
         padding: 0.5em;
         border: solid black;
         border-radius: 12px;
@@ -41,9 +41,12 @@
         background-color: white;
         cursor: pointer;
     }
+
+    
+    
     .botao:hover{
         border:  solid black;
-        background-color: rgb(17, 50, 236);
+        background-color: rgb(0, 0, 0);
         color: white;
     }
 
@@ -60,7 +63,7 @@
     .resul{
         display: flex;
         flex-direction: column;
-        color: red;
+        color: blue;
         font-size: 30px;
         max-width: 30px;
         align-items: center;
@@ -78,9 +81,40 @@
         border-radius: 15px;
         margin-bottom: 1em;
     }
+
+    .jaque{
+        width: 50px;
+        height: 50px;
+    }
+
+    .button{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sub{
+        color: white;
+        background-color: rgb(255, 241, 162);
+    }
+
+    .cor1{
+        color: green;
+    }
+
+    .cor2{
+        color: rgb(255, 0, 0);
+    }
+
+    .cor3{
+        color: rgb(47, 0, 255);
+    }
+
+    .cor4{
+        color: #000;
+    }
 }
 
 *{
-   // border: solid 1px black;
+   //border: solid 1px black;
 }
 

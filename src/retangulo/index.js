@@ -10,44 +10,56 @@ export default function Retangulo(){
   
   
    let retangulo = [];
+   let array = []
    let linhaRetangulo = '';
-
-   function asteristico(event){
-    if(event.target.checked){
-        linhaRetangulo = '*'
-    }
-   }
-
-   function circulo(event){
-    if(event.target.checked){
-        linhaRetangulo = 'o'
-    }
-   }
-
-   function quadrado(event){
-    if(event.target.checked){
-             linhaRetangulo += '▫'
-             
-        }
-       
-    }
-
-    function desenhar(){
+   
+   
+    function desenharAsteristico(){
         for (let coluna = 1; coluna <= altura; coluna++) {
             for (let linha = 1; linha <= base; linha++) {
-                linhaRetangulo += '*'
+                linhaRetangulo += '★'
             }
             retangulo.push(linhaRetangulo)
             linhaRetangulo = '\n'
             setResul(retangulo)
         }
     }
-    
-   
-   
-    
-    
 
+    function desenharCirculo(){
+        for (let coluna = 1; coluna <= altura; coluna++) {
+            for (let linha = 1; linha <= base; linha++) {
+                linhaRetangulo += '○'
+            }
+            retangulo.push(linhaRetangulo)
+            linhaRetangulo = '\n'
+            setResul(retangulo)
+        }
+    }
+
+    function desenharQuadrado(){
+        for (let coluna = 1; coluna <= altura; coluna++) {
+            for (let linha = 1; linha <= base; linha++) {
+                linhaRetangulo += '∎'
+            }
+            retangulo.push(linhaRetangulo)
+            linhaRetangulo = '\n'
+            setResul(retangulo)
+        }
+    }
+
+     function desenharImagem(){
+        let array = []
+        let x = 0
+        let z = 0
+        
+        for(x; x <base; x++){
+            array [x] = '<img src ="/jaqueBrutal.jpg" alt="kk" width= "50" height = "50"; /> '
+        }
+
+        for (z; z< altura; z++ ){
+            document.write(array);
+        }
+     }
      return(
         <main className="page-temperatura">
  
@@ -58,14 +70,19 @@ export default function Retangulo(){
        <h1>desenhar retangulo</h1>
 
        <div className="sub"> 
-       <input type="radio" name="quiz" onChange={asteristico} /> asteristico
-       <input type="radio" name="quiz" onChange={circulo} /> circulo
-       <input type="radio" name="quiz" onChange={quadrado} /> Quadrado
+       <h2> <span className="cor1">★ Estrela</span> | <span className="cor2">○ circulo </span> | <span className="cor3">∎ Quadrado</span> | <span className="cor4"> img</span></h2>
        </div>
          <div> informe a base:  <input className="input" type="number" value={base} onChange={e => setBase(Number(e.target.value))}></input> </div>
          
          <div> informe a altura:  <input className="input" type="number" value={altura} onChange={e => setAltura(Number(e.target.value))}></input> </div>
-         <button className="botao" onClick={desenhar}>Vereficar</button>
+         <div className="button">
+
+         <button className="botao" onClick={desenharAsteristico}>Vereficar asteristico</button>
+         <button className="botao" onClick={desenharCirculo}>Vereficar circulo</button>
+         <button className="botao" onClick={desenharQuadrado}>Vereficar Quadrado</button>
+         <button className="botao" onClick={desenharImagem}>Vereficar Imagem</button> 
+         </div>
+        
       
          <div className="resul">
            <div>{resul}</div> 

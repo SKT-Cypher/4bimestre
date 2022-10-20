@@ -10,29 +10,51 @@ export default function Cafe() {
 
     function CalcularCafe() {
 
-         let aluninhos = (estudantes * litros)/1000
+         let aluninhos = (estudantes * litros)/1000;
+         
+        
+         if (aluninhos <= capacidade)
+         setResul (capacidade)
+        
+         else {
+            for (let cafe = capacidade; cafe <= aluninhos; cafe ++) {
+                let trasformador = cafe;
+                let reposta = trasformador + capacidade ;
+                let reposta2 = trasformador + (capacidade -1)
+                   setResul(reposta)
+                   if (capacidade === 1){
+                    setResul(reposta2)
+                   }
+         }
+        
+         }
 
-         for (let cafe=capacidade; cafe<=aluninhos; cafe+ (Math.floor(capacidade))){
-            let cafecafe = cafe
-
-
-        setResul(cafecafe) }
-
-
+    
     }
 
 
     return(
-        <div align='center' className='div-principal-cafe'>
-            <h1 className='cu'>comi o cu de quem ta lendo</h1>
-            <label>Quantos estudantes?</label>
-            <input type='' onChange={e=> setEstudantes(e.target.value)}/>
-            <label>Quanto cada um bebe?</label>
-            <input onChange={e=> setLitros(e.target.value)}/>
-            <label>Quanto de capacidade?</label>
-            <input onChange={e=> setCapacidade(e.target.value)}/>
-            <button onClick={CalcularCafe}>CALCULAR CAFÉ</button>
-            <h1>{setResul}</h1>
-        </div>
+        <main className='page-temperatura'>
+
+            
+            <section className='conteiner-1'>
+                
+            <h1 className='cu'>Quero cafe</h1>
+
+            <label>Quantos alunos?</label>
+            <input className="input" type="number" value={estudantes} onChange={e => setEstudantes(Number(e.target.value))}></input>
+            <label>Quantos ml por aluno?</label>
+            <input className="input" type="number" value={litros} onChange={e => setLitros(Number(e.target.value))}></input>
+            <label>Quantos L capacidade?</label>
+            <input className="input" type="number" value={capacidade} onChange={e => setCapacidade(Number(e.target.value))}></input>
+            <button className='botao' onClick={CalcularCafe}>calcular cafe</button>
+            <div> Serao neceessários {resul} Litros</div> 
+            <img className='gaso' src='/cafe.jpg' alt='jaque'/>
+
+            </section>
+           
+            
+           
+        </main>
     )
 }

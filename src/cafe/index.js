@@ -17,7 +17,7 @@ export default function Cafe() {
          setResul (capacidade)
         
          else {
-            for (let cafe = capacidade; cafe <= aluninhos; cafe ++) {
+            for (let cafe = capacidade; cafe <= aluninhos; cafe +=capacidade) {
                 let trasformador = cafe;
                 let reposta = trasformador + capacidade ;
                 let reposta2 = trasformador + (capacidade -1)

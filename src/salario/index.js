@@ -17,7 +17,7 @@ export default function Liquido(){
 
         <section className="conteiner-1">
         <h1>Salario</h1>
-         <div> Dinheiro: <input className="input" type="number" value={din} onChange={e => setDin(Number(e.target.value))}></input> </div>
+        
          <div> Desconto: <input className="input" type="number" value={descont} onChange={e => setDescont(Number(e.target.value))}></input> </div>
          <div> Bonus - : <input className="input" type="number" value={bonus} onChange={e => setBonus(Number(e.target.value))}></input> </div>
          <button className="botao" onClick={salario}>Vereficar</button>

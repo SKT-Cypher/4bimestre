@@ -17,6 +17,7 @@ import Cafe from './cafe';
 import JogoVelha from './jogoVelha';
 import JogoImparPar from './JogoImparPar';
 import Jokenpo from './JogoJokênpo';
+import MediaAlunos from './mediaAluno';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,6 +39,7 @@ root.render(
       <Route path='/jogoJaque' element={<JogoVelha/>}/>
       <Route path='/jogoImparPar' element={<JogoImparPar/>}/>
       <Route path='/jokenpo' element={<Jokenpo/>}/>
+      <Route path='/media' element={<MediaAlunos/>} />
     
 
       

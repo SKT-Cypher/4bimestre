@@ -1,40 +1,66 @@
-import './index.scss';
 import { useState } from 'react';
+import './index.scss';
+import { calcMaior, calcMedia, calcMenor, criarArray } from '../services';
 
-export default function MediaAlunos(){
-    const [aluninhos, setAluninhos] = useState(0);
-    const [nota, setNota] = useState([]);
-    const [resultado, setResultado] = useState(0);
-    let arr = [];
-    let input = <input  className="inputt" type='number' ></input> 
-   
-    function contarAlunos(){
-        
-        let alun =  'aluno:'
-       
-       
-        
-       for(let cont = 1; cont <= aluninhos; cont++)
-       arr.push(alun, cont, input , "\n") 
-       setResultado(arr);
-      }
+export default function MediaAlunos() {
+  const [qtd, setQtd] = useState(0);
+  const [notasAlunos, setNotasAlunos] = useState([]);
 
-      
+  const [media, setMedia] = useState(0);
+  const [maior, setMaior] = useState(0);
+  const [menor, setMenor] = useState(0);
 
-    return (
 
-        <main>
-            <h1>Media aAluno</h1>
+  function okQtd() {
+    const x = criarArray(qtd);
+    setNotasAlunos(x);
+  }
 
-        <div> Alunos  <input type='number' value={aluninhos} onChange={e => setAluninhos (Number(e.target.value))}></input></div>
-      
-        <button className="botao" onClick={contarAlunos}>Vereficar</button>
-        <div className='resultado'>{resultado}</div>
+  function alterar(pos, novoValor) {
+    notasAlunos[pos] = Number(novoValor);
+    setNotasAlunos([...notasAlunos]);
+  }
 
-        <button className="botao" onClick={''}>Vereficar Nota alta</button>
-       
-        <button className="botao" onClick={''}>Vereficar Nota baixa</button>
-        <button className="botao" onClick={''}>Vereficar Media</button>
-        </main>
-    )
+  function calcular() {
+    const a = calcMedia(notasAlunos);
+    const b = calcMaior(notasAlunos);
+    const c = calcMenor(notasAlunos);
+
+    setMedia(a);
+    setMaior(b);
+    setMenor(c);
+  }
+
+
+  return (
+    
+      <main className="page-temperatura">
+
+        <div>
+          Qtd. Alunos: <input className='input' type='number' value={qtd} onChange={e => setQtd(e.target.value)} />
+          <button className='botao' onClick={okQtd}> ok </button>
+        </div>
+
+        {notasAlunos.map((item, pos) => 
+          <div>
+            Aluno {pos+1}: <input className='input' type='number' value={notasAlunos[pos]} onChange={e => alterar(pos, e.target.value)} />
+          </div>
+        )}
+
+
+        <button className='botao' onClick={calcular}> Calcular </button>
+
+        <div>
+          Média: {media}
+        </div>
+        <div>
+          Maior: {maior}
+        </div>
+        <div>
+          Menor: {menor}
+        </div>
+
+      </main>
+    
+  );
 }
